@@ -79,13 +79,13 @@
 
 //撤销一步的操作，貌似需求不需要了
 - (IBAction)backBtnEvent:(id)sender {
-    [self.drawPaletteView myLineFinallyRemove];
+    [self.drawPaletteView cleanFinallyDraw];
 }
 
 - (IBAction)cleanBtnEvent:(id)sender {
     AlertViewWithBlockOrSEL *alertView = [[AlertViewWithBlockOrSEL alloc] initWithTitle:@"清空画板" message:@"确定清空自己的画板?这将无法撤销."] ;
     [alertView addOtherButtonWithTitle:@"清空" onTapped:^{
-        [self.drawPaletteView myalllineclear];
+        [self.drawPaletteView cleanAllDrawBySelf];
     }];
     [alertView setCancelButtonWithTitle:@"取消" onTapped:^{
     }];
@@ -203,7 +203,7 @@
         UIButton *colorBtn          = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, colorBtnWidth, colorBtnWidth)];
         colorBtn.left               = margin+i*colorBtnWidth+i*colorBtnmargin;
         colorBtn.centerY            = colorNavScrollView.height/2.f;
-        colorBtn.tintColor          = [DrawPaletteView colorWithHexString:colorArr[i]];
+        colorBtn.tintColor          = [QHUtil colorWithHexString:colorArr[i]];
         [colorBtn setImage:[[UIImage imageNamed:@"icon_draw_color_gray"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         colorBtn.tag                = i;
         [colorNavScrollView addSubview:colorBtn];
@@ -222,15 +222,16 @@
 }
 
 - (void)initView {
-    self.title=@"画";
-    self.rubberBtn.tag=0;
-    curHexColor = colorArr[0];
-    lastColor = curHexColor;
-    curWidth =4;
+    
+    self.title         = @"画";
+    self.rubberBtn.tag = 0;
+    curHexColor        = colorArr[0];
+    lastColor          = curHexColor;
+    curWidth           = 4;
     
     self.drawPaletteView.layer.masksToBounds = YES;
-    self.drawPaletteView.backgroundColor = [UIColor whiteColor];
-    self.bottomView.backgroundColor = [DrawPaletteView colorWithHexString:@"#DDDDDD"];
+    self.drawPaletteView.backgroundColor     = [UIColor whiteColor];
+    self.bottomView.backgroundColor          = [QHUtil colorWithHexString:@"#DDDDDD"];
     
     float wwidth               = 32;
     chooseWidthView            = [[UIView alloc] initWithFrame:CGRectMake(0, 0, wwidth, wwidth*3+3*6)];
@@ -243,7 +244,7 @@
     chooseWidthView.clipsToBounds=YES;
     for (int i=0;i<3;i++) {
         UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0+i*(6+wwidth), wwidth, wwidth)];
-        btn.backgroundColor = [DrawPaletteView colorWithHexString:@"#D8D8D8"];
+        btn.backgroundColor = [QHUtil colorWithHexString:@"#D8D8D8"];
         btn.tag=2-i;
         [btn addTarget:self action:@selector(widthBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
 
@@ -262,16 +263,14 @@
     
     
     UIButton *  rightNavBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightNavBtn setTitle:@"生成" andFont:defaultFont(16) andTitleColor:YMSTitleColor andBgColor:[UIColor clearColor] andRadius:0];
+    
     rightNavBtn.size = CGSizeMake(80, 30);
     rightNavBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
-    [rightNavBtn setTitle:@"生成" forState:UIControlStateNormal];
-    [rightNavBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [rightNavBtn addTarget:self
                     action:@selector(rightNavBtnEvent)
           forControlEvents:UIControlEventTouchUpInside];
-    rightNavBtn.titleLabel.font = defaultFont(16);
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightNavBtn];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightNavBtn];
 
     
 }

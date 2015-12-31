@@ -39,7 +39,7 @@
                                     <action selector="push:" destination="kDE-uD-OYf" eventType="touchUpInside" id="sgw-7c-wKn"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="C0D-Fe-oX1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="C0D-Fe-oX1">
                                 <rect key="frame" x="0.0" y="64" width="320" height="267"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>

@@ -1,12 +1,12 @@
 //
 //  AlertViewWithBlockOrSEL.h
-//  lovewith
+//  QHSimpleFrame
 //
 //  Created by imqiuhang on 15/4/1.
-//  Copyright (c) 2015年 lovewith.me. All rights reserved.
+//  Copyright (c) 2015年 imqiuhang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "QHHead.h"
 
 @interface AlertViewWithBlockOrSEL : UIAlertView
 - (id)initWithTitle:(NSString *)title message:(NSString *)message;

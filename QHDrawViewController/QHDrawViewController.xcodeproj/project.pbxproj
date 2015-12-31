@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0065781C34BC1500C5566A /* AlertViewWithBlockOrSEL.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0065651C34BC1500C5566A /* AlertViewWithBlockOrSEL.m */; };
+		EC0065791C34BC1500C5566A /* NSObject+DataSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0065671C34BC1500C5566A /* NSObject+DataSecurity.m */; };
+		EC00657A1C34BC1500C5566A /* NSString+QHNSStringCtg.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0065691C34BC1500C5566A /* NSString+QHNSStringCtg.m */; };
+		EC00657B1C34BC1500C5566A /* NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = EC00656A1C34BC1500C5566A /* NullSafe.m */; };
+		EC00657C1C34BC1500C5566A /* UIButton+QHButtonCtg.m in Sources */ = {isa = PBXBuildFile; fileRef = EC00656C1C34BC1500C5566A /* UIButton+QHButtonCtg.m */; };
+		EC00657D1C34BC1500C5566A /* UILabel+QHLabelCtg.m in Sources */ = {isa = PBXBuildFile; fileRef = EC00656E1C34BC1500C5566A /* UILabel+QHLabelCtg.m */; };
+		EC00657E1C34BC1500C5566A /* UIView+QHUIViewCtg.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0065701C34BC1500C5566A /* UIView+QHUIViewCtg.m */; };
+		EC00657F1C34BC1500C5566A /* QHUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0065751C34BC1500C5566A /* QHUtil.m */; };
+		EC0065801C34BC1500C5566A /* QHUtilAss.m in Sources */ = {isa = PBXBuildFile; fileRef = EC0065771C34BC1500C5566A /* QHUtilAss.m */; };
 		EC1ABA811B7D900800E596D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1ABA801B7D900800E596D3 /* main.m */; };
 		EC1ABA841B7D900800E596D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1ABA831B7D900800E596D3 /* AppDelegate.m */; };
 		EC1ABA871B7D900800E596D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1ABA861B7D900800E596D3 /* ViewController.m */; };
@@ -14,7 +23,6 @@
 		EC1ABA8C1B7D900800E596D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1ABA8B1B7D900800E596D3 /* Images.xcassets */; };
 		EC1ABA8F1B7D900800E596D3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC1ABA8D1B7D900800E596D3 /* LaunchScreen.xib */; };
 		EC1ABA9B1B7D900900E596D3 /* QHDrawViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1ABA9A1B7D900900E596D3 /* QHDrawViewControllerTests.m */; };
-		EC1ABAA91B7D905600E596D3 /* UIView+QHUIViewCtg.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1ABAA81B7D905600E596D3 /* UIView+QHUIViewCtg.m */; };
 		EC1ABAAF1B7D949C00E596D3 /* DrawPaletteView.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1ABAAC1B7D949C00E596D3 /* DrawPaletteView.m */; };
 		EC1ABAB01B7D949C00E596D3 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1ABAAE1B7D949C00E596D3 /* DrawViewController.m */; };
 		EC1ABABB1B7D951800E596D3 /* icon_delegate_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1ABAB11B7D951800E596D3 /* icon_delegate_gray@2x.png */; };
@@ -31,7 +39,6 @@
 		EC1ABACA1B7D953200E596D3 /* aso_draw_black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1ABAC61B7D953200E596D3 /* aso_draw_black@3x.png */; };
 		EC1ABACB1B7D953200E596D3 /* aso_draw_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1ABAC71B7D953200E596D3 /* aso_draw_white@2x.png */; };
 		EC1ABACC1B7D953200E596D3 /* aso_draw_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EC1ABAC81B7D953200E596D3 /* aso_draw_white@3x.png */; };
-		EC1ABACF1B7D95B900E596D3 /* AlertViewWithBlockOrSEL.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1ABACE1B7D95B900E596D3 /* AlertViewWithBlockOrSEL.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC0065641C34BC1500C5566A /* AlertViewWithBlockOrSEL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewWithBlockOrSEL.h; sourceTree = "<group>"; };
+		EC0065651C34BC1500C5566A /* AlertViewWithBlockOrSEL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewWithBlockOrSEL.m; sourceTree = "<group>"; };
+		EC0065661C34BC1500C5566A /* NSObject+DataSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DataSecurity.h"; sourceTree = "<group>"; };
+		EC0065671C34BC1500C5566A /* NSObject+DataSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DataSecurity.m"; sourceTree = "<group>"; };
+		EC0065681C34BC1500C5566A /* NSString+QHNSStringCtg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QHNSStringCtg.h"; sourceTree = "<group>"; };
+		EC0065691C34BC1500C5566A /* NSString+QHNSStringCtg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QHNSStringCtg.m"; sourceTree = "<group>"; };
+		EC00656A1C34BC1500C5566A /* NullSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NullSafe.m; sourceTree = "<group>"; };
+		EC00656B1C34BC1500C5566A /* UIButton+QHButtonCtg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+QHButtonCtg.h"; sourceTree = "<group>"; };
+		EC00656C1C34BC1500C5566A /* UIButton+QHButtonCtg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+QHButtonCtg.m"; sourceTree = "<group>"; };
+		EC00656D1C34BC1500C5566A /* UILabel+QHLabelCtg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+QHLabelCtg.h"; sourceTree = "<group>"; };
+		EC00656E1C34BC1500C5566A /* UILabel+QHLabelCtg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+QHLabelCtg.m"; sourceTree = "<group>"; };
+		EC00656F1C34BC1500C5566A /* UIView+QHUIViewCtg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QHUIViewCtg.h"; sourceTree = "<group>"; };
+		EC0065701C34BC1500C5566A /* UIView+QHUIViewCtg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QHUIViewCtg.m"; sourceTree = "<group>"; };
+		EC0065711C34BC1500C5566A /* macrodefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macrodefine.h; sourceTree = "<group>"; };
+		EC0065721C34BC1500C5566A /* QHHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHHead.h; sourceTree = "<group>"; };
+		EC0065741C34BC1500C5566A /* QHUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHUtil.h; sourceTree = "<group>"; };
+		EC0065751C34BC1500C5566A /* QHUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHUtil.m; sourceTree = "<group>"; };
+		EC0065761C34BC1500C5566A /* QHUtilAss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHUtilAss.h; sourceTree = "<group>"; };
+		EC0065771C34BC1500C5566A /* QHUtilAss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHUtilAss.m; sourceTree = "<group>"; };
 		EC1ABA7B1B7D900800E596D3 /* QHDrawViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QHDrawViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1ABA7F1B7D900800E596D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC1ABA801B7D900800E596D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -58,9 +84,6 @@
 		EC1ABA941B7D900900E596D3 /* QHDrawViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QHDrawViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1ABA991B7D900900E596D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC1ABA9A1B7D900900E596D3 /* QHDrawViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QHDrawViewControllerTests.m; sourceTree = "<group>"; };
-		EC1ABAA61B7D905600E596D3 /* QHDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHDefine.h; sourceTree = "<group>"; };
-		EC1ABAA71B7D905600E596D3 /* UIView+QHUIViewCtg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QHUIViewCtg.h"; sourceTree = "<group>"; };
-		EC1ABAA81B7D905600E596D3 /* UIView+QHUIViewCtg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QHUIViewCtg.m"; sourceTree = "<group>"; };
 		EC1ABAAB1B7D949C00E596D3 /* DrawPaletteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPaletteView.h; sourceTree = "<group>"; };
 		EC1ABAAC1B7D949C00E596D3 /* DrawPaletteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPaletteView.m; sourceTree = "<group>"; };
 		EC1ABAAD1B7D949C00E596D3 /* DrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawViewController.h; sourceTree = "<group>"; };
@@ -79,8 +102,6 @@
 		EC1ABAC61B7D953200E596D3 /* aso_draw_black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aso_draw_black@3x.png"; sourceTree = "<group>"; };
 		EC1ABAC71B7D953200E596D3 /* aso_draw_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aso_draw_white@2x.png"; sourceTree = "<group>"; };
 		EC1ABAC81B7D953200E596D3 /* aso_draw_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aso_draw_white@3x.png"; sourceTree = "<group>"; };
-		EC1ABACD1B7D95B900E596D3 /* AlertViewWithBlockOrSEL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewWithBlockOrSEL.h; sourceTree = "<group>"; };
-		EC1ABACE1B7D95B900E596D3 /* AlertViewWithBlockOrSEL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewWithBlockOrSEL.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +122,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC0065621C34BC1500C5566A /* QHUtil */ = {
+			isa = PBXGroup;
+			children = (
+				EC0065711C34BC1500C5566A /* macrodefine.h */,
+				EC0065721C34BC1500C5566A /* QHHead.h */,
+				EC0065631C34BC1500C5566A /* Categorys */,
+				EC0065731C34BC1500C5566A /* Util */,
+			);
+			path = QHUtil;
+			sourceTree = "<group>";
+		};
+		EC0065631C34BC1500C5566A /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				EC0065641C34BC1500C5566A /* AlertViewWithBlockOrSEL.h */,
+				EC0065651C34BC1500C5566A /* AlertViewWithBlockOrSEL.m */,
+				EC0065661C34BC1500C5566A /* NSObject+DataSecurity.h */,
+				EC0065671C34BC1500C5566A /* NSObject+DataSecurity.m */,
+				EC0065681C34BC1500C5566A /* NSString+QHNSStringCtg.h */,
+				EC0065691C34BC1500C5566A /* NSString+QHNSStringCtg.m */,
+				EC00656A1C34BC1500C5566A /* NullSafe.m */,
+				EC00656B1C34BC1500C5566A /* UIButton+QHButtonCtg.h */,
+				EC00656C1C34BC1500C5566A /* UIButton+QHButtonCtg.m */,
+				EC00656D1C34BC1500C5566A /* UILabel+QHLabelCtg.h */,
+				EC00656E1C34BC1500C5566A /* UILabel+QHLabelCtg.m */,
+				EC00656F1C34BC1500C5566A /* UIView+QHUIViewCtg.h */,
+				EC0065701C34BC1500C5566A /* UIView+QHUIViewCtg.m */,
+			);
+			path = Categorys;
+			sourceTree = "<group>";
+		};
+		EC0065731C34BC1500C5566A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EC0065741C34BC1500C5566A /* QHUtil.h */,
+				EC0065751C34BC1500C5566A /* QHUtil.m */,
+				EC0065761C34BC1500C5566A /* QHUtilAss.h */,
+				EC0065771C34BC1500C5566A /* QHUtilAss.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		EC1ABA721B7D900800E596D3 = {
 			isa = PBXGroup;
 			children = (
@@ -122,7 +185,7 @@
 		EC1ABA7D1B7D900800E596D3 /* QHDrawViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EC1ABAA41B7D903000E596D3 /* QHDrawCore */,
+				EC1ABAA41B7D903000E596D3 /* QHDrawViewController */,
 				EC1ABA821B7D900800E596D3 /* AppDelegate.h */,
 				EC1ABA831B7D900800E596D3 /* AppDelegate.m */,
 				EC1ABA851B7D900800E596D3 /* ViewController.h */,
@@ -161,29 +224,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EC1ABAA41B7D903000E596D3 /* QHDrawCore */ = {
+		EC1ABAA41B7D903000E596D3 /* QHDrawViewController */ = {
 			isa = PBXGroup;
 			children = (
 				EC1ABAAB1B7D949C00E596D3 /* DrawPaletteView.h */,
 				EC1ABAAC1B7D949C00E596D3 /* DrawPaletteView.m */,
 				EC1ABAAD1B7D949C00E596D3 /* DrawViewController.h */,
 				EC1ABAAE1B7D949C00E596D3 /* DrawViewController.m */,
-				EC1ABAA51B7D905600E596D3 /* QHSupports */,
+				EC0065621C34BC1500C5566A /* QHUtil */,
 				EC1ABAAA1B7D906900E596D3 /* resource */,
 			);
+			name = QHDrawViewController;
 			path = QHDrawCore;
-			sourceTree = "<group>";
-		};
-		EC1ABAA51B7D905600E596D3 /* QHSupports */ = {
-			isa = PBXGroup;
-			children = (
-				EC1ABACD1B7D95B900E596D3 /* AlertViewWithBlockOrSEL.h */,
-				EC1ABACE1B7D95B900E596D3 /* AlertViewWithBlockOrSEL.m */,
-				EC1ABAA61B7D905600E596D3 /* QHDefine.h */,
-				EC1ABAA71B7D905600E596D3 /* UIView+QHUIViewCtg.h */,
-				EC1ABAA81B7D905600E596D3 /* UIView+QHUIViewCtg.m */,
-			);
-			path = QHSupports;
 			sourceTree = "<group>";
 		};
 		EC1ABAAA1B7D906900E596D3 /* resource */ = {
@@ -321,13 +373,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC00657D1C34BC1500C5566A /* UILabel+QHLabelCtg.m in Sources */,
+				EC00657B1C34BC1500C5566A /* NullSafe.m in Sources */,
 				EC1ABAB01B7D949C00E596D3 /* DrawViewController.m in Sources */,
 				EC1ABA871B7D900800E596D3 /* ViewController.m in Sources */,
+				EC0065801C34BC1500C5566A /* QHUtilAss.m in Sources */,
 				EC1ABA841B7D900800E596D3 /* AppDelegate.m in Sources */,
+				EC00657F1C34BC1500C5566A /* QHUtil.m in Sources */,
+				EC0065781C34BC1500C5566A /* AlertViewWithBlockOrSEL.m in Sources */,
 				EC1ABA811B7D900800E596D3 /* main.m in Sources */,
-				EC1ABACF1B7D95B900E596D3 /* AlertViewWithBlockOrSEL.m in Sources */,
+				EC00657A1C34BC1500C5566A /* NSString+QHNSStringCtg.m in Sources */,
+				EC0065791C34BC1500C5566A /* NSObject+DataSecurity.m in Sources */,
+				EC00657E1C34BC1500C5566A /* UIView+QHUIViewCtg.m in Sources */,
+				EC00657C1C34BC1500C5566A /* UIButton+QHButtonCtg.m in Sources */,
 				EC1ABAAF1B7D949C00E596D3 /* DrawPaletteView.m in Sources */,
-				EC1ABAA91B7D905600E596D3 /* UIView+QHUIViewCtg.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QHDrawViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -464,6 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QHDrawViewController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -522,6 +583,7 @@
 				EC1ABAA01B7D900900E596D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EC1ABAA11B7D900900E596D3 /* Build configuration list for PBXNativeTarget "QHDrawViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +592,7 @@
 				EC1ABAA31B7D900900E596D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
