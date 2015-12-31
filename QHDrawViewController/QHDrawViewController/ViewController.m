@@ -20,8 +20,7 @@
 }
 - (IBAction)push:(id)sender {
     DrawViewController *drawVC =[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"DrawViewController"];
-    drawVC.isFromJoin=YES;
-    drawVC.delegate=self;
+    drawVC.delegate = self;
     [self.navigationController pushViewController:drawVC animated:YES];
 }
 

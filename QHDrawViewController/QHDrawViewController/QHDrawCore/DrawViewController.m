@@ -3,16 +3,11 @@
 //  lovewith
 //
 //  Created by imqiuhang on 15/4/22.
-//  Copyright (c) 2015年 lovewith.me. All rights reserved.
+//  Copyright (c) 2015年 imqiuhang All rights reserved.
 //
 
 #import "DrawViewController.h"
-#import "AlertViewWithBlockOrSEL.h"
-#import "UIView+QHUIViewCtg.h"
-#define margin              20.f
-#define colorSliderNavHeigh 44.f
-#define colorBtnWidth       30.f
-#define colorBtnmargin      10
+
 
 @interface DrawViewController ()
 
@@ -22,56 +17,65 @@
 {
     NSArray      *colorArr;
     UIScrollView *colorNavScrollView;
-    NSString     *curHexColor;
-    NSString     *lastColor;
-    float        curWidth;
-    CGPoint      MyBeganpoint;
-    CGPoint      MyMovepoint;
     UIView       *chooseWidthView;
     CGRect       changeWithViewDefaultFrame;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.title = @"画";
     [self initColorBtn];
     [self initView ];
+    
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
 }
 
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    
-    if ([gestureRecognizer isEqual:self.navigationController.interactivePopGestureRecognizer]) {
-        
-        return NO;
-        
-    } else {
-        
-        return YES;
-        
+//保存画板上的画
+- (void)rightNavBtnEvent {
+    if ([self.delegate respondsToSelector:@selector(drawViewControllerDidMadeImage:)]) {
+        [self.delegate drawViewControllerDidMadeImage:[self.drawPaletteView screenshotWithQuality:1.f]];
     }
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark - valueChanged
+#pragma mark Gesture 
+//屏蔽侧滑返回的触摸
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return  ![gestureRecognizer isEqual:self.navigationController.interactivePopGestureRecognizer];
+}
+
+#pragma mark- set
+//设置笔刷的宽度 和颜色 并将设置好的值传给画板
+- (void)setCurrentPaintBrushColor:(UIColor *)currentPaintBrushColor {
+    _currentPaintBrushColor= currentPaintBrushColor;
+    self.drawPaletteView.currentPaintBrushColor = currentPaintBrushColor;
+}
+
+- (void)setCurrentPaintBrushWidth:(float)currentPaintBrushWidth {
+    _currentPaintBrushWidth = currentPaintBrushWidth;
+    self.drawPaletteView.currentPaintBrushWidth = currentPaintBrushWidth;
+}
+
+#pragma mark - ValueChangedEvent
+//点击了改变颜色滑动栏上的某个颜色按钮，讲选择好的颜色传给画板
 - (void)colorBtnEvent:(UIButton *)sender {
-    curHexColor = colorArr[sender.tag];
-    lastColor = curHexColor;
-    self.rubberBtn.tag=0;
-    curHexColor=lastColor;
+    self.currentPaintBrushColor = [QHUtil colorWithHexString:colorArr[sender.tag]];
+    self.rubberBtn.tag = 0;
     [self.rubberBtn setImage:[UIImage imageNamed :@"icon_runbbsh_gray@3x"] forState:UIControlStateNormal];
     [self changeColor:self.changeColorBtn];
 }
 
+//点击了橡皮  临时将画板上的画笔颜色改为白色，取消点击橡皮后再将原本的颜色传给画笔
 - (IBAction)rubberBtnEvent:(id)sender {
     if (self.rubberBtn.tag==0) {
-       curHexColor = @"#ffffff";
+        self.drawPaletteView.currentPaintBrushColor = [QHUtil colorWithHexString:@"ffffff"];
         self.rubberBtn.tag=1;
         [self.rubberBtn setImage:[UIImage imageNamed :@"icon_runbbsh_pink"] forState:UIControlStateNormal];
     }else {
-        self.rubberBtn.tag=0;
-        curHexColor=lastColor;
+        self.rubberBtn.tag = 0;
+        self.currentPaintBrushColor = _currentPaintBrushColor;
         [self.rubberBtn setImage:[UIImage imageNamed :@"icon_runbbsh_gray@3x"] forState:UIControlStateNormal];
     }
     
@@ -82,6 +86,7 @@
     [self.drawPaletteView cleanFinallyDraw];
 }
 
+//清空画板按钮
 - (IBAction)cleanBtnEvent:(id)sender {
     AlertViewWithBlockOrSEL *alertView = [[AlertViewWithBlockOrSEL alloc] initWithTitle:@"清空画板" message:@"确定清空自己的画板?这将无法撤销."] ;
     [alertView addOtherButtonWithTitle:@"清空" onTapped:^{
@@ -93,12 +98,9 @@
 
 }
 
-- (IBAction)widthValueChangedEvent:(UISlider *)sender {
-    curWidth = sender.value;
-}
-
+//弹出选颜色的滑动栏
 - (IBAction)changeColor:(UIButton *)sender {
-    sender.enabled=NO;
+    sender.enabled = NO;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         colorNavScrollView.width =  colorNavScrollView.width<QHScreenWidth?QHScreenWidth:0;
     } completion:^(BOOL finished) {
@@ -107,6 +109,7 @@
     }];
 }
 
+//弹出选择粗细的按钮
 - (IBAction)chageWidth:(UIButton *)sender {
     
     sender.enabled=NO;
@@ -115,7 +118,7 @@
             chooseWidthView.height=0;
             chooseWidthView.bottom = self.view.bottom-self.bottomView.height;
         }else {
-            chooseWidthView.frame=changeWithViewDefaultFrame;
+            chooseWidthView.frame = changeWithViewDefaultFrame;
         }
     } completion:^(BOOL finished) {
         sender.enabled = YES;
@@ -123,6 +126,7 @@
     }];
 }
 
+//选择粗细按钮上的某个粗细按钮点击事件，将选择好的粗细传给画板
 - (void)selectWidth:(int)index {
     for(UIButton *btn in chooseWidthView.subviews) {
         if (btn.tag==index) {
@@ -131,7 +135,7 @@
             btn.backgroundColor = QHRGB(216, 216, 316);;
         }
     }
-    curWidth = (index+1)*3;
+    self.currentPaintBrushWidth = (index+1)*3;
     
 }
 
@@ -140,31 +144,6 @@
     [self chageWidth:self.chooseWidthBtn];
 }
 
-#pragma mark - drawWhileTouch
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch* touch=[touches anyObject];
-    MyBeganpoint=[touch locationInView:self.drawPaletteView ];
-    
-    [self.drawPaletteView IntroductionpointHexColor:curHexColor];
-    [self.drawPaletteView IntroductionpointWidth:curWidth];
-    [self.drawPaletteView IntroductionpointInitPoint];
-    [self.drawPaletteView IntroductionpointAddPoint:MyBeganpoint];
-
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSArray* MovePointArray=[touches allObjects];
-    MyMovepoint=[[MovePointArray objectAtIndex:0] locationInView:self.drawPaletteView];
-    [self.drawPaletteView IntroductionpointAddPoint:MyMovepoint];
-    [self.drawPaletteView setNeedsDisplay];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.drawPaletteView IntroductionpointSavePoint];
-    [self.drawPaletteView setNeedsDisplay];
-}
 
 #pragma mark -init
 - (void)initColorBtn {
@@ -190,6 +169,12 @@
       @"#d6036b",
     ];
 
+    float margin              = 20.f;
+    float colorSliderNavHeigh = 44.f;
+    float colorBtnWidth       = 30.f;
+    float colorBtnmargin      = 10;
+    
+    
     colorNavScrollView  = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, QHScreenWidth, colorSliderNavHeigh)];
     colorNavScrollView.bottom = self.view.height-self.bottomView.height;
     colorNavScrollView.contentSize =CGSizeMake(margin*2+colorBtnWidth*colorArr.count+colorBtnmargin*(colorArr.count-1), colorNavScrollView.contentSize.height);
@@ -213,21 +198,11 @@
     
 }
 
-
-- (void)rightNavBtnEvent {
-    if ([self.delegate respondsToSelector:@selector(drawViewControllerDidMadeImage:)]) {
-        [self.delegate drawViewControllerDidMadeImage:[self.drawPaletteView screenshotWithQuality:1.f]];
-    }
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (void)initView {
-    
-    self.title         = @"画";
+
     self.rubberBtn.tag = 0;
-    curHexColor        = colorArr[0];
-    lastColor          = curHexColor;
-    curWidth           = 4;
+    self.currentPaintBrushColor = [QHUtil colorWithHexString:colorArr[0]] ;
+    self.currentPaintBrushWidth = 4;
     
     self.drawPaletteView.layer.masksToBounds = YES;
     self.drawPaletteView.backgroundColor     = [UIColor whiteColor];
@@ -285,6 +260,8 @@
    [self.navigationController setNavigationBarHidden:NO animated:YES];
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:animated];
 }
+
+
 
 
 @end
