@@ -45,20 +45,24 @@
 		for (int i=0; i<[allMyDrawPaletteLineInfos count]; i++) {
             DrawPaletteLineInfo *info = allMyDrawPaletteLineInfos[i];
             
-			if ([info.linePoints count]>1) {
-				CGContextBeginPath(context);
-				CGPoint myStartPoint=[[info.linePoints objectAtIndex:0] CGPointValue];
-				CGContextMoveToPoint(context, myStartPoint.x, myStartPoint.y);
-				
-				for (int j=0; j<[info.linePoints count]-1; j++) {
-					CGPoint myEndPoint=[[info.linePoints objectAtIndex:j+1] CGPointValue];
-					CGContextAddLineToPoint(context, myEndPoint.x,myEndPoint.y);	
-				}
-				CGContextSetStrokeColorWithColor(context, info.lineColor.CGColor);
-				CGContextSetLineWidth(context, info.lineWidth+1);
-				CGContextStrokePath(context);
-			}
-		}
+            CGContextBeginPath(context);
+            CGPoint myStartPoint=[[info.linePoints objectAtIndex:0] CGPointValue];
+            CGContextMoveToPoint(context, myStartPoint.x, myStartPoint.y);
+            
+            if (info.linePoints.count>1) {
+                for (int j=0; j<[info.linePoints count]-1; j++) {
+                    CGPoint myEndPoint=[[info.linePoints objectAtIndex:j+1] CGPointValue];
+                    CGContextAddLineToPoint(context, myEndPoint.x,myEndPoint.y);
+                }
+            }else {
+                CGContextAddLineToPoint(context, myStartPoint.x,myStartPoint.y);
+            }
+            
+
+            CGContextSetStrokeColorWithColor(context, info.lineColor.CGColor);
+            CGContextSetLineWidth(context, info.lineWidth+1);
+            CGContextStrokePath(context);
+        }
 	}
 }
 
@@ -70,6 +74,7 @@
     UITouch* touch=[touches anyObject];
 
     [self drawPaletteTouchesBeganWithWidth:self.currentPaintBrushWidth andColor:self.currentPaintBrushColor andBeginPoint:[touch locationInView:self ]];
+    [self setNeedsDisplay];
 }
 //触摸移动
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
